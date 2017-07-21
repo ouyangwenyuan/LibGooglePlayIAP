@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">iapdemo</string>
+    <string name="tab_one_name">a</string>
+    <string name="tab_two_name">b</string>
+    <string name="tab_three_name">c</string>
+    <string name="id_num">1</string>
+
+    <string name="image_msg">图片描述</string>
+    <string name="action_settings">ActionSettings</string>
+
+    <string name="recycleview">recycleview</string>
+    <string name="card_view">CardView</string>
+    <string name="floating_action_button">FloatingAction</string>
+    <string name="home_activity">HomeActivity</string>
+    <string name="text_input_button">TIP_BUTTON</string>
+
+
+    <string name="hint_username">Username</string>
+    <string name="hint_password">password</string>
+
+    <string name="facebook_app_provide">com.facebook.app.FacebookContentProvider472520209777307</string>
+    <string name="facebook_app_id">472520209777307</string>
+    <string name="fb_login_protocol_scheme">fb472520209777307</string>
+</resources>

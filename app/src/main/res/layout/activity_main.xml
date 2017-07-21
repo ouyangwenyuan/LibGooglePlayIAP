@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.example.administrator.widget.MainActivity">
+
+
+    <!-- <com.facebook.login.widget.LoginButton
+        android:id="@+id/bt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        /> -->
+
+
+    <Button
+        android:id="@+id/bt_friendlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取好友列表"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/bt_select_friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择邀请好友"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/bt_invited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="静默邀请好友"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/bt_shared"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享app"
+        android:textColor="@color/colorPrimaryDark"/>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.tbs.piano" //"com.example.administrator.widget" "com.fotoable.emojikeyboard" //1232650820156535
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 10
+        versionName "1.1"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+    signingConfigs {
+        release {
+            keyAlias 'piano'
+            keyPassword '123456'
+            storeFile file('../piano.jks')
+            storePassword '123456'
+        }
+    }
+
+//    release {
+//        keyAlias 'fotoime'
+//        keyPassword 'fotoime714'
+//        storeFile file('../fotoime_keystore')
+//        storePassword 'fotoime714'
+//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:multidex:1.0.1'
+    compile project(':iaplib')
+
+}
