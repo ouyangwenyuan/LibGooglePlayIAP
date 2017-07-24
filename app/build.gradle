@@ -4,11 +4,11 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "com.tbs.piano" //"com.example.administrator.widget" "com.fotoable.emojikeyboard" //1232650820156535
+        applicationId  "com.tbs.piano" //'com.emoji.input.gif.theme.keyboard' // "com.fotoable.emojikeyboard" //1232650820156535
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 10
-        versionName "1.1"
+        versionCode 292
+        versionName "1.0.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -19,19 +19,20 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'piano'
+            keyAlias 'piano'git
             keyPassword '123456'
             storeFile file('../piano.jks')
             storePassword '123456'
         }
-    }
-
 //    release {
 //        keyAlias 'fotoime'
 //        keyPassword 'fotoime714'
 //        storeFile file('../fotoime_keystore')
 //        storePassword 'fotoime714'
-//    }
+//        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false

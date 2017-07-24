@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.example.administrator.widget.MainActivity">
+              tools:context=".MainActivity">
 
 
     <!-- <com.facebook.login.widget.LoginButton
@@ -17,31 +17,31 @@
 
 
     <Button
-        android:id="@+id/bt_friendlist"
+        android:id="@+id/bt_week_iap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="获取好友列表"
+        android:text="每周订"
         android:textColor="@color/colorPrimaryDark"/>
 
     <Button
-        android:id="@+id/bt_select_friend"
+        android:id="@+id/bt_month_iap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="选择邀请好友"
+        android:text="每月订"
         android:textColor="@color/colorPrimaryDark"/>
 
     <Button
-        android:id="@+id/bt_invited"
+        android:id="@+id/bt_year_iap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="静默邀请好友"
+        android:text="每年订"
         android:textColor="@color/colorPrimaryDark"/>
 
     <Button
-        android:id="@+id/bt_shared"
+        android:id="@+id/bt_restore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="分享app"
+        android:text="恢复购买"
         android:textColor="@color/colorPrimaryDark"/>
 
 </LinearLayout>
