@@ -19,7 +19,7 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'piano'git
+            keyAlias 'piano'
             keyPassword '123456'
             storeFile file('../piano.jks')
             storePassword '123456'
