@@ -59,10 +59,11 @@ public class PaymentManager {
     }
 
     /**
-     *  初始化 支付服务
-     * @param context  Context
-     * @param iapKey  iab Google后台配置的key
-     * @param productItems  配置的商品名列表
+     * 初始化 支付服务
+     *
+     * @param context      Context
+     * @param iapKey       iab Google后台配置的key
+     * @param productItems 配置的商品名列表
      */
     public void setupPurchases(final Context context, String iapKey, final List<String> productItems) {
         this.iapKey = iapKey;
@@ -72,7 +73,9 @@ public class PaymentManager {
             public void onIabSetupFinished(IabResult result) {
                 MyLog.d("iabresult:" + result);
                 setupSuccess = result.isSuccess();
-                mHelper.queryInventoryAsync(true, productItems, null);
+                if (setupSuccess) {
+                    mHelper.queryInventoryAsync(true, productItems, null);
+                }
             }
         });
     }
@@ -90,8 +93,9 @@ public class PaymentManager {
 
 
     /**
-     *  检查商品购买情况
-     * @param productItems 配置的商品名列表
+     * 检查商品购买情况
+     *
+     * @param productItems         配置的商品名列表
      * @param gotInventoryListener
      */
     public void checkPurchases(List<String> productItems, IabHelper.QueryInventoryFinishedListener gotInventoryListener) {
@@ -134,10 +138,11 @@ public class PaymentManager {
     }
 
     /**
-     *  支付
-     * @param mActivity 发起支付的activity
-     * @param purchaseId  支付条目字符串
-     * @param purchaseFinishedListener  支付回调
+     * 支付
+     *
+     * @param mActivity                发起支付的activity
+     * @param purchaseId               支付条目字符串
+     * @param purchaseFinishedListener 支付回调
      */
     public void purchase(Activity mActivity, String purchaseId, PurchaseFinishedListener purchaseFinishedListener) {
         this.purchaseFinishedListener = purchaseFinishedListener;
