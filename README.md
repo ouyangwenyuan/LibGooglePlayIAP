@@ -1,5 +1,6 @@
 对google play 的 内购 iap的一个封装，方便集成和使用
 PaymentManager API：
+```java
  	/**
      * 初始化 支付服务
      *
@@ -26,6 +27,8 @@ PaymentManager API：
      * @param purchaseFinishedListener 支付回调
      */
     public void purchase(Activity mActivity, String purchaseId, PurchaseFinishedListener purchaseFinishedListener)；
+    
+ ```
 使用方法
 
 #### Step 1. Add the JitPack repository to your build file , Add it in your root build.gradle at the end of repositories:
@@ -46,6 +49,38 @@ PaymentManager API：
 	}
 ```
 #### Step3. 在App启动的时候初始化IAP库
-
+```java
+ 	List purchareItems = new ArrayList<>();
+        purchareItems.add(PUCHASE_WEEKLY_ITEM);
+        purchareItems.add(PUCHASE_MONTHLY_ITEM);
+        purchareItems.add(PUCHASE_YEARLY_ITEM);
+        PaymentManager.getInstance().setupPurchases(this, IPA_KEY, purchareItems);
+```
 #### Step4. 在支付的时候调用purchase 方法
+```java
+	PaymentManager.getInstance().purchase(this, purchaseId, new PaymentManager.PurchaseFinishedListener() {
+                @Override
+                public void success(IabResult result, Purchase purchase) {
+                    MyLog.i(purchase + ",success " + result);
+                    try {
+                        showToast("success" + result);
+//                        progressDialog.dismiss();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+                @Override
+                public void failure(IabResult result, Purchase purchase) {
+                    MyLog.i(purchase + ",fail " + result);
+                    try {
+                        showToast("failure" + result);
+//                        progressDialog.dismiss();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+```
  
